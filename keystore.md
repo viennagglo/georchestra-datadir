@@ -28,7 +28,7 @@ sudo keytool -importkeystore \
     -srckeystore /etc/ssl/certs/java/cacerts \
     -destkeystore /srv/jetty/jetty80/etc/keystore
 ```
-First password is "yourpassword"
+First password is "yourpassword"     
 The password of the srckeystore is "changeit" by default, and should be modified in /etc/default/cacerts.
 
 ### SSL
@@ -39,6 +39,5 @@ sudo keytool -import -alias cert_ssl \
 	-file /var/www/georchestra/ssl/georchestra.crt \
 	-keystore /srv/jetty/jetty80/etc/keystore
 ```
-Firts password is "yourpassword"
+Firts password is "yourpassword"     
 After, answer yes or oui
-
