@@ -1,0 +1,11 @@
+Dear admin,
+
+A new account has been created on https://geo.viennagglo.fr/ and is waiting for validation.
+
+User name: {name}
+User ID: {uid}
+
+Visit https://geo.viennagglo.fr/ldapadmin/console/#/groups/PENDING/users to review the pending users.
+
+---
+Sent by geOrchestra (https://geo.viennagglo.fr)
