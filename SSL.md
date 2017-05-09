@@ -5,8 +5,8 @@ Generate a private key (enter a good passphrase and keep it safe !)
 sudo rm -Rf /var/www/georchestra/ssl/*
 
 sudo openssl genrsa -des3 \
+	-passout pass:yourpassword \
 	-out /var/www/georchestra/ssl/georchestra.key 2048
-passphrase = custompassword	
 ```
 
 Protect it with:
@@ -20,8 +20,8 @@ sudo openssl req \
 	-key /var/www/georchestra/ssl/georchestra.key \
 	-subj "/C=FR/ST=None/L=None/O=None/OU=None/CN=georchestra.fr" \
 	-newkey rsa:2048 -sha256 \
+	-passin pass:yourpassword \
 	-out /var/www/georchestra/ssl/georchestra.csr
-passphrase = custompassword	
 ```
 
 Be sure to replace the ```/C=FR/ST=None/L=None/O=None/OU=None/CN=geo.viennagglo.fr``` string with something more relevant:
@@ -36,8 +36,8 @@ Create an unprotected key:
 ```
 sudo openssl rsa \
 	-in /var/www/georchestra/ssl/georchestra.key \
+	-passin pass:yourpassword \
 	-out /var/www/georchestra/ssl/georchestra-unprotected.key
-passphrase = custompassword	
 ```
 
 Finally generate a self-signed certificate (CRT):
@@ -46,8 +46,8 @@ sudo openssl x509 -req \
 	-days 365 \
 	-in /var/www/georchestra/ssl/georchestra.csr \
 	-signkey /var/www/georchestra/ssl/georchestra.key \
+	-passin pass:yourpassword
 	-out /var/www/georchestra/ssl/georchestra.crt
-passphrase = custompassword
 ```
 
 sudo chown -Rf www-data:www-data /var/www/georchestra/ssl/*
