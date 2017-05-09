@@ -50,8 +50,11 @@ sudo openssl x509 -req \
 	-out /var/www/georchestra/ssl/georchestra.crt
 ```
 
+We check folder's content :
+```
 sudo chown -Rf www-data:www-data /var/www/georchestra/ssl/*
 ls -l /var/www/georchestra/ssl/
+```
 
 Restart the web server:
 ```
